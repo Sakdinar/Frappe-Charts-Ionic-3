@@ -2,27 +2,46 @@
 Use frappe-charts in Ionic 3 as a custom component
 
 ### How to use
-Copy the frappe-charts folder to your /app-path/src/components/ folder
+```
+npm install -g ionic@latest
+```
+```
+ionic start frappe-charts-ionic
+```
 
-Import the frappe-charts component to your page.module.ts
+Install Frappe charts to the project.
+
+```
+npm install frappe-charts
+```
+
+Copy the frappe-charts component to your project's components folder. Make sure to import this component in your general component's module `/src/components/components.module.ts`.
+
+Import the styles in `/src/app/app.scss`
+```css
+@import '../../node_modules/frappe-charts/dist/frappe-charts.min';
+```
+
+Lastly, import the component's module to `/src/app/page.module.ts`. Also, make sure that your app is configured to use the lazy loading feature!
 ```javascript
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
 ...
-import { FrappeChartsComponentModule } from '../../components/frappe-charts/frappe-charts.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
 	declarations: [...],
 	imports: [
 		...,
-		FrappeChartsComponentModule,
+		IonicModule.forRoot(MyApp, {
+			preloadModules: true //enable preloading of modules
+		}),
+		ComponentsModule,
 	],
 	exports: [...]
 })
-export class PageModule {}
+...
 ```
 
-Set the chart parameters on your page.ts file
+To use it in a page, just provide the data:
 ```javascript
 ...
 export class Page {
@@ -52,18 +71,16 @@ export class Page {
 }
 ```
 
-Then use the component like so
-```javascript
+Then use the component like:
+```
 <frappe-charts [params]="chartParam"></frappe-charts>
 ```
 
-**_Make sure your Ionic app is configured for lazy loading._**
-
-### Optimisation needed
-I'm not sure how to import the css from node_modules folder so I had to copy the style codes to the component's css file. Let me know if you know the right way of doing this.
+That's it! 
 
 
 ---
+For more detailed instruction, view my blog post in [Medium](https://medium.com/@ejfrias/how-i-used-frappe-charts-with-ionic-e8607e4f241)
 Credits to [frappe-charts](https://github.com/frappe/charts) for this awesome chart library!
 
 

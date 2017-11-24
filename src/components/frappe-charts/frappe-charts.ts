@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import Chart from 'frappe-charts/dist/frappe-charts.min.esm';
+import Chart from 'frappe-charts/dist/frappe-charts.esm';
 
 @Component({
 	selector: 'frappe-charts',
@@ -29,7 +29,8 @@ export class FrappeChartsComponent {
 			data: this.params.data,
 			type: this.params.type || 'bar',
 			title: this.params.title || '',
-			height: this.params.height || 250
+			height: this.params.height || 250,
+			region_fill: 1,
 		};
 
 		this.chart = new Chart(chartParams);
