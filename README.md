@@ -81,6 +81,7 @@ That's it!
 
 ---
 For more detailed instruction, view my blog post in [Medium](https://medium.com/@ejfrias/how-i-used-frappe-charts-with-ionic-e8607e4f241)
+
 Credits to [frappe-charts](https://github.com/frappe/charts) for this awesome chart library!
 
 
