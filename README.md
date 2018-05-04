@@ -12,8 +12,9 @@ ionic start frappe-charts-ionic
 Install Frappe charts to the project.
 
 ```
-npm install frappe-charts
+npm install frappe-charts@0.0.7
 ```
+_Note: since frappe-charts had its major rewrite for v1, we have to indicate the v0.0.7 when installing the package._
 
 Copy the frappe-charts component to your project's components folder. Make sure to import this component in your general component's module `/src/components/components.module.ts`.
 
